@@ -11,6 +11,7 @@ Future<void> main() async {
 
   teledart.start();
 
- teledart.onCommand('glory').listen((message) => message.reply('For Aserot!'));
+ teledart.onMessage(entityType: 'bot_command', keyword: 'start')
+    .listen((message) => teledart.sendMessage(message.chat.id, 'Hello TeleDart!'));
   
 }
